@@ -24,7 +24,7 @@ vadd: src/vadd.cpp bin_dir
 vector_sum: src/vector_sum.f90 bin_dir
 	$(FC) $(FCFLAGS) src/vector_sum.f90 -o bin/vector_sum$(OUTPUT_SUFFIX)
 
-verify_compilation: all
+verify_compilation: gather scatter stream vadd vector_sum
 	./verify_compilation.sh
 
 clean:
